@@ -1,5 +1,6 @@
 {
   "version": 2,
+  "buildCommand": "cd client && npm install && REACT_APP_API_URL=https://realtime-apps-json.vercel.app REACT_APP_SHOP_DOMAIN=testing-appx.myshopify.com npm run build",
   "builds": [
     {
       "src": "client/package.json",
@@ -41,8 +42,12 @@
     "SHOPIFY_ACCESS_TOKEN": "@shopify_access_token",
     "SHOPIFY_SHOP_DOMAIN": "@shopify_shop_domain",
     "MONGODB_URI": "@mongodb_uri",
-    "PORT": "3001",
-    "REACT_APP_API_URL": "https://realtime-apps-json.vercel.app",
-    "REACT_APP_SHOP_DOMAIN": "@shopify_shop_domain"
+    "PORT": "3001"
+  },
+  "build": {
+    "env": {
+      "REACT_APP_API_URL": "https://realtime-apps-json.vercel.app",
+      "REACT_APP_SHOP_DOMAIN": "testing-appx.myshopify.com"
+    }
   }
 }
