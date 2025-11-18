@@ -2,12 +2,10 @@ import React, { useState, useEffect } from 'react';
 import './App.css';
 import ComponentRenderer from './components/ComponentRenderer';
 
-// Use production URL if no env variable is set (Vercel deployment)
-const API_URL = process.env.REACT_APP_API_URL || 
-  (window.location.hostname === 'realtime-apps-json.vercel.app' 
-    ? 'https://realtime-apps-json.vercel.app' 
-    : 'http://localhost:3001');
-const SHOP_DOMAIN = process.env.REACT_APP_SHOP_DOMAIN || 'testing-appx.myshopify.com';
+// Force production URL - v2
+const API_URL = 'https://realtime-apps-json.vercel.app';
+const SHOP_DOMAIN = 'testing-appx.myshopify.com';
+console.log('🔧 API_URL:', API_URL); // Debug log
 
 function App() {
   const [themeData, setThemeData] = useState(null);
