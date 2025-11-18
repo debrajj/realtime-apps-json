@@ -16,7 +16,9 @@ const PORT = process.env.PORT || 3001;
 app.use(cors({
   origin: [
     'http://localhost:3000',
-    'https://realtime-apps-json.vercel.app'
+    'http://localhost:3002',
+    'https://realtime-apps-json.vercel.app',
+    /https:\/\/realtime-apps-json.*\.vercel\.app$/ // Allow all preview deployments
   ],
   credentials: true,
   methods: ['GET', 'POST', 'PUT', 'DELETE', 'OPTIONS'],

@@ -2,8 +2,10 @@ import React, { useState, useEffect } from 'react';
 import './App.css';
 import ComponentRenderer from './components/ComponentRenderer';
 
-// Force production URL - v2
-const API_URL = 'https://realtime-apps-json.vercel.app';
+// Determine API URL based on environment
+const API_URL = window.location.hostname === 'localhost' 
+  ? 'http://localhost:3001'
+  : 'https://realtime-apps-json.vercel.app';
 const SHOP_DOMAIN = 'testing-appx.myshopify.com';
 console.log('🔧 API_URL:', API_URL); // Debug log
 
