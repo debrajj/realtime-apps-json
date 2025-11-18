@@ -1,0 +1,7 @@
+SHOPIFY_API_KEY=6d5593dbc8c7a2c4691d0a7b6ea29a18
+SHOPIFY_API_SECRET=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
+SHOPIFY_ACCESS_TOKEN=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
+SHOPIFY_SHOP_DOMAIN=testing-appx.myshopify.com
+MONGODB_URI=mongodb+srv://shopify_db_user:debraj123@shopifyyyy.ed4qywd.mongodb.net/shopify_images
+HOST=https://shopify-json-frist-mongodb.vercel.app
+PORT=3001
