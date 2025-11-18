@@ -16,8 +16,7 @@ const PORT = process.env.PORT || 3001;
 app.use(cors({
   origin: [
     'http://localhost:3000',
-    'https://realtime-apps-json.vercel.app',
-    'https://shopify-json-frist-mongodb.vercel.app'
+    'https://realtime-apps-json.vercel.app'
   ],
   credentials: true,
   methods: ['GET', 'POST', 'PUT', 'DELETE', 'OPTIONS'],

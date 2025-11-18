@@ -38,15 +38,15 @@ npm install
 
 ### 2. Configure Environment
 
-Edit `.env` with your credentials (already configured):
+Edit `.env` with your credentials:
 
 ```
-SHOPIFY_API_KEY=6d5593dbc8c7a2c4691d0a7b6ea29a18
-SHOPIFY_API_SECRET=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
-SHOPIFY_ACCESS_TOKEN=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
-SHOPIFY_SHOP_DOMAIN=testing-appx.myshopify.com
-MONGODB_URI=mongodb+srv://shopify_db_user:debraj123@shopifyyyy.ed4qywd.mongodb.net/shopify_images
-HOST=https://shopify-json-frist-mongodb.vercel.app
+SHOPIFY_API_KEY=your_api_key_here
+SHOPIFY_API_SECRET=your_api_secret_here
+SHOPIFY_ACCESS_TOKEN=your_access_token_here
+SHOPIFY_SHOP_DOMAIN=your-store.myshopify.com
+MONGODB_URI=your_mongodb_connection_string
+HOST=https://realtime-apps-json.vercel.app
 PORT=3001
 ```
 
@@ -64,12 +64,12 @@ In Shopify Admin → Settings → Notifications → Webhooks:
 
 1. **Theme update webhook:**
    - Event: `themes/update`
-   - URL: `https://shopify-json-frist-mongodb.vercel.app/webhooks/theme`
+   - URL: `https://realtime-apps-json.vercel.app/webhooks/theme`
    - Format: JSON
 
 2. **Asset update webhook:**
    - Event: `assets/update`
-   - URL: `https://shopify-json-frist-mongodb.vercel.app/webhooks/asset`
+   - URL: `https://realtime-apps-json.vercel.app/webhooks/asset`
    - Format: JSON
 
 ### 5. Install Frontend Dependencies
