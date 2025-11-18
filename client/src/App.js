@@ -11,6 +11,7 @@ function App() {
   const [lastUpdate, setLastUpdate] = useState(null);
   const [error, setError] = useState(null);
   const [showJson, setShowJson] = useState(true);
+  const [showExtensions, setShowExtensions] = useState(true);
 
   useEffect(() => {
     // Fetch initial theme data
@@ -112,18 +113,51 @@ function App() {
               </div>
             </div>
             
-            <div className="json-panel">
-              <div className="json-header">
-                <h3>📄 Theme JSON Data</h3>
-                <button onClick={() => setShowJson(!showJson)} className="toggle-btn">
-                  {showJson ? '▼ Hide' : '▶ Show'}
-                </button>
+            <div className="side-panel">
+              <div className="extensions-panel">
+                <div className="panel-header">
+                  <h3>🧩 Active Theme Extensions</h3>
+                  <button onClick={() => setShowExtensions(!showExtensions)} className="toggle-btn">
+                    {showExtensions ? '▼' : '▶'}
+                  </button>
+                </div>
+                {showExtensions && (
+                  <div className="extensions-list">
+                    {themeData.theme?.app_extensions && themeData.theme.app_extensions.length > 0 ? (
+                      themeData.theme.app_extensions.map((ext, index) => (
+                        <div key={index} className="extension-item">
+                          <div className="extension-icon">📦</div>
+                          <div className="extension-info">
+                            <h4>{ext.title || ext.name || 'Unnamed Extension'}</h4>
+                            <p className="extension-type">{ext.type || 'App Extension'}</p>
+                            {ext.enabled !== undefined && (
+                              <span className={`extension-status ${ext.enabled ? 'active' : 'inactive'}`}>
+                                {ext.enabled ? '✓ Active' : '✗ Inactive'}
+                              </span>
+                            )}
+                          </div>
+                        </div>
+                      ))
+                    ) : (
+                      <div className="no-extensions">No active extensions found</div>
+                    )}
+                  </div>
+                )}
               </div>
-              {showJson && (
-                <pre className="json-content">
-                  {JSON.stringify(themeData, null, 2)}
-                </pre>
-              )}
+
+              <div className="json-panel-section">
+                <div className="panel-header">
+                  <h3>📄 Theme JSON Data</h3>
+                  <button onClick={() => setShowJson(!showJson)} className="toggle-btn">
+                    {showJson ? '▼' : '▶'}
+                  </button>
+                </div>
+                {showJson && (
+                  <pre className="json-content">
+                    {JSON.stringify(themeData, null, 2)}
+                  </pre>
+                )}
+              </div>
             </div>
           </div>
         ) : (
